@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta cha<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyết trình Kháng chiến chống Pháp (1945 - 1950)</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b;
+            --bg-color: #f3f4f6;
+            --text-color: #333;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- CSS CHO MENU DROP DOWN --- */
+        .dropdown {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
+        }
+        .dropbtn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #1a252f;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow-y: auto;
+            max-height: 80vh;
+            margin-top: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--secondary-color);
+        }
+        .show {display: block;}
+
+        /* --- CSS CHO CONTAINER TÀI LIỆU --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 50px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        
+        /* CẬP NHẬT: CSS CHO ĐỊA DANH CLICK ĐƯỢC */
+        .location {
+            background-color: #fdebd0;
+            color: #d35400;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer; /* Thêm con trỏ chuột dạng bàn tay */
+            transition: all 0.2s;
+            border-bottom: 1px dashed #d35400;
+        }
+        .location:hover {
+            background-color: #f5b041;
+            color: white;
+        }
+        .location::before {
+            content: '📍';
+            font-size: 14px;
+        }
+
+        /* --- CSS CHO MODAL (BẢNG THÔNG TIN ĐỊA DANH) --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.6); 
+            backdrop-filter: blur(3px);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            animation: animatetop 0.4s;
+        }
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        #modal-title {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        #modal-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 15px 0;
+            display: none;
+        }
+        #modal-desc {
+            font-size: 15px;
+            color: #444;
+            text-align: justify;
+        }
+        .wiki-source {
+            font-size: 12px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- CSS CHO MINDMAP --- */
+        .mindmap-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+        }
+        .mindmap-tree {
+            display: inline-flex;
+            padding: 20px;
+        }
+        .mindmap-tree ul {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 40px;
+            margin: 0;
+            list-style: none;
+        }
+        .mindmap-tree > ul {
+            padding-left: 0;
+        }
+        .mindmap-tree ul::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            border-top: 2px solid #9ca3af;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .mindmap-tree > ul::before {
+            display: none;
+        }
+        .mindmap-tree li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 12px 0;
+        }
+        .mindmap-tree > ul > li::before,
+        .mindmap-tree > ul > li::after {
+            display: none;
+        }
+        .mindmap-tree li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -20px;
+            border-left: 2px solid #9ca3af;
+            z-index: 1;
+        }
+        .mindmap-tree li:first-child::before {
+            top: 50%;
+        }
+        .mindmap-tree li:last-child::before {
+            bottom: 50%;
+        }
+        .mindmap-tree li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 20px;
+            border-top: 2px solid #9ca3af;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .node {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 14px;
+            color: #1f2937;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            position: relative;
+            max-width: 320px;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        a.node {
+            cursor: pointer;
+            color: #1d4ed8;
+            font-weight: 500;
+        }
+        a.node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.25);
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .arrow-icon {
+            color: #e11d48;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .root {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 6px 15px rgba(29, 78, 216, 0.3);
+        }
+        .level-2 {
+            border-color: #10b981;
+            font-weight: 600;
+        }
+        a.node.level-2 {
+            color: #047857;
+        }
+    </style>
+</head>
+<body>
+
+<!-- KHU VỰC HIỂN THỊ MODAL ĐỊA DANH -->
+<div id="locationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Tên Địa Danh</h2>
+        <img id="modal-img" src="" alt="Hình ảnh lịch sử">
+        <p id="modal-desc">Thông tin chi tiết về địa danh này vào thời điểm lịch sử 1945-1950...</p>
+        <div class="wiki-source">Nguồn: Trích xuất tổng hợp từ Wikipedia tiếng Việt</div>
+    </div>
+</div>
+
+<!-- Nút dropdown sự kiện -->
+<div class="dropdown">
+    <button onclick="toggleMenu()" class="dropbtn">☰ Danh mục sự kiện</button>
+    <div id="eventMenu" class="dropdown-content">
+        <a href="#mindmap-section" style="font-weight: bold; color: #2980b9;">🌟 0. Sơ đồ tư duy (Mindmap)</a>
+        <a href="#event-1">1. Hội nghị Potsdam (7-8/1945)</a>
+        <a href="#event-2">2. Pháp nổ súng đánh chiếm Sài Gòn (23/9/1945)</a>
+        <a href="#event-3">3. Hiệp ước Hoa - Pháp (28/2/1946)</a>
+        <a href="#event-4">4. Hiệp định Sơ bộ (6/3/1946) & Tạm ước (14/9/1946)</a>
+        <a href="#event-5">5. Pháp gửi tối hậu thư (18/12/1946)</a>
+        <a href="#event-6">6. Lời kêu gọi Toàn quốc kháng chiến (19/12/1946)</a>
+        <a href="#event-7">7. Cuộc chiến đấu ở các đô thị (Cuối 1946 - Đầu 1947)</a>
+        <a href="#event-8">8. Chiến dịch Việt Bắc Thu - Đông (1947)</a>
+        <a href="#event-9">9. Kế hoạch Rơ-ve (1949)</a>
+        <a href="#event-10">10. Chiến dịch Biên giới Thu - Đông (1950)</a>
+        <a href="#event-11">11. Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950)</a>
+    </div>
+</div>
+
+<!-- KHỐI 1: TỔNG QUAN & MINDMAP -->
+<div class="container" id="mindmap-section">
+    <h1>CUỘC KHÁNG CHIẾN CHỐNG THỰC DÂN PHÁP (1945 - 1950)</h1>
+    <h2 class="section-title">SƠ ĐỒ TƯ DUY TỔNG QUAN</h2>
+    
+    <div class="mindmap-wrapper">
+        <p style="text-align: center; color: #6b7280; font-style: italic; margin-top: 0;">(Bấm vào bất kỳ ô nào có mũi tên ➔ để di chuyển nhanh đến nội dung tương ứng)</p>
+        <div class="mindmap-tree">
+            <ul>
+                <li>
+                    <div class="node root">Kháng chiến chống Pháp<br>(1945 - 1950)</div>
+                    <ul>
+                        <li>
+                            <a href="#phan-1" class="node level-2">I. Bối cảnh & Tình hình trong nước <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li><a href="#event-1" class="node">Hội nghị Potsdam chia cắt Đông Dương <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-2-3" class="node">Đế quốc đồng lõa: Pháp chiếm Sài Gòn, Ký Hiệp ước Hoa - Pháp <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-khokhan" class="node">Khó khăn: "Thù trong, giặc ngoài", kinh tế kiệt quệ, 90% dân mù chữ <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-4" class="node">Sách lược "Dĩ bất biến": Hòa hoãn Tưởng, ký Hiệp định Sơ bộ & Tạm ước <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#phan-2" class="node level-2">II. Bùng nổ kháng chiến (12/1946) <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li><a href="#event-5" class="node">Pháp bội ước, gửi tối hậu thư ngày 18/12/1946 <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-6" class="node">Đường lối: Toàn dân, toàn diện, trường kỳ, tự lực cánh sinh <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-7" class="node">Giam chân địch ở đô thị (Hà Nội, Nam Định, Huế...) <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#phan-3" class="node level-2">III. Các chiến dịch quân sự lớn <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#event-8" class="node">Việt Bắc (1947) <span class="arrow-icon">➔</span></a>
+                                    <ul>
+                                        <li><a href="#event-8-result" class="node">Đập tan kế hoạch "Đánh nhanh thắng nhanh" của Pháp <span class="arrow-icon">➔</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#event-10" class="node">Biên giới (1950) <span class="arrow-icon">➔</span></a>
+                                    <ul>
+                                        <li><a href="#event-9" class="node">Phá Kế hoạch Rơ-ve, chọc thủng Hành lang Đông - Tây <span class="arrow-icon">➔</span></a></li>
+                                        <li><a href="#event-10-result" class="node">Giành quyền chủ động chiến lược trên chiến trường Bắc Bộ <span class="arrow-icon">➔</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#event-11" class="node">Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950) <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- KHỐI 2: NỘI DUNG CHI TIẾT -->
+<div class="container" id="content-section">
+    <h2 class="section-title" style="margin-bottom: 30px;">NỘI DUNG CHI TIẾT</h2>
+
+    <h2 id="phan-1">I. Bối cảnh quốc tế: Trật tự thế giới và nguyên nhân Pháp ngang nhiên quay lại xâm lược</h2>
+    <p>Tại sao vừa giành được độc lập, chúng ta lại lập tức phải đối mặt với nguy cơ xâm lược một lần nữa? Thực dân Pháp lấy đâu ra quyền lực và sự hậu thuẫn để ngang nhiên đưa quân trở lại <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>? Điều này bắt nguồn trực tiếp từ sự sắp xếp của các cường quốc thắng trận trong Trật tự thế giới mới (Trật tự Ianta).</p>
+    
+    <h3 id="event-1">1. Sự phân chia khu vực giải giáp quân Nhật theo Hội nghị Potsdam</h3>
+    <ul>
+        <li>Tại Hội nghị Potsdam (tháng 7 và 8/1945), các cường quốc Đồng minh (Anh, Mỹ, Liên Xô) đã thỏa thuận việc giải giáp quân đội Nhật Bản ở <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>. Theo đó, vĩ tuyến 16 được chọn làm ranh giới:</li>
+        <li><strong>Phía Bắc vĩ tuyến 16:</strong> Giao cho quân đội Trung Hoa Dân Quốc (Tưởng Giới Thạch).</li>
+        <li><strong>Phía Nam vĩ tuyến 16:</strong> Giao cho quân đội Anh.</li>
+        <li>Sự phân chia này hoàn toàn bỏ qua quyền tự quyết của nhân dân Việt Nam. Các nước Đồng minh tiến vào nước ta với danh nghĩa giải giáp quân Nhật, nhưng thực chất lại mang theo những toan tính địa chính trị riêng, tạo kẽ hở cho Pháp quay lại.</li>
+    </ul>
+    
+    <h3 id="event-2-3">2. Sự đồng lõa của các nước Đế quốc</h3>
+    <ul>
+        <li id="event-2"><strong>Sự tiếp tay của quân đội Anh ở <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>:</strong> Anh cũng là một quốc gia có nhiều thuộc địa ở châu Á. Việc Việt Nam giành độc lập đe dọa trực tiếp đến hệ thống thuộc địa của Anh. Do đó, khi vào <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>, quân Anh do tướng Gracey chỉ huy đã lấy cớ "giữ gìn trị an" để thả các tù binh Pháp, trang bị lại vũ khí cho chúng, dung túng và hỗ trợ lực lượng Pháp nổ súng đánh chiếm <span class="location" onclick="showLocationInfo('Sài Gòn')">Sài Gòn</span> vào rạng sáng 23/9/1945.</li>
+        <li id="event-3"><strong>Sự thỏa hiệp trắng trợn qua Hiệp ước Hoa - Pháp (2/1946):</strong> Ở <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span>, chính quyền Tưởng Giới Thạch ban đầu muốn tiêu diệt chính quyền cách mạng Việt Nam. Nhưng sau đó, do gặp khó khăn trong cuộc nội chiến với Đảng Cộng sản Trung Quốc, Tưởng đã bắt tay với Pháp. Ngày 28/2/1946, Pháp và Tưởng ký Hiệp ước Hoa - Pháp. Pháp trả lại một số quyền lợi cho Tưởng ở Trung Quốc, đổi lại, Tưởng đồng ý cho quân Pháp ra <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span> thay thế chúng giải giáp quân Nhật. Đây là một cuộc đổi chác thuộc địa bẩn thỉu trên lưng nhân dân ta.</li>
+    </ul>
+    
+    <h3>3. Thái độ của Mỹ và dã tâm của Pháp</h3>
+    <ul>
+        <li><strong>Thái độ của Mỹ:</strong> Sau Thế chiến II, Chiến tranh Lạnh dần hình thành. Mỹ cần lôi kéo Pháp làm đồng minh nòng cốt để chống lại ảnh hưởng của Liên Xô ở châu Âu. Do đó, dù Mỹ có lập trường "chống chủ nghĩa thực dân", họ vẫn làm ngơ, thậm chí ngầm ủng hộ và viện trợ để Pháp quay lại xâm lược <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>, nhằm ngăn chặn làn sóng cộng sản ở châu Á.</li>
+        <li><strong>Dã tâm của Pháp:</strong> Nước Pháp bị tàn phá nặng nề và chịu nhiều nhục nhã trong Thế chiến II. Giới cầm quyền Pháp (đứng đầu là De Gaulle) quyết tâm lấy lại "hòn ngọc Viễn Đông" (<span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>) để bòn rút tài nguyên tái thiết đất nước và khôi phục vị thế cường quốc trên trường quốc tế.</li>
+    </ul>
+    
+    <h2>II. Tình hình trong nước sau Cách mạng tháng Tám (9/1945 - 12/1946)</h2>
+    <p>Dưới tác động của bối cảnh quốc tế trên, nước Việt Nam Dân chủ Cộng hòa non trẻ lập tức rơi vào tình thế "ngàn cân treo sợi tóc".</p>
+    
+    <h3 id="event-khokhan">1. Những khó khăn đe dọa sự tồn vong của chế độ mới</h3>
+    <ul>
+        <li><strong>Ngoại xâm và nội phản ("Thù trong, giặc ngoài"):</strong> Chưa bao giờ trên đất nước ta lại có mặt cùng lúc nhiều kẻ thù đến thế (Quân Tưởng, Anh, Pháp, Nhật, và các tổ chức phản động Việt Quốc, Việt Cách).</li>
+        <li><strong>Kinh tế kiệt quệ ("Giặc đói"):</strong> Hậu quả của chính sách vơ vét gây ra nạn đói kinh hoàng làm khoảng 2 triệu người chết. Nông nghiệp đình đốn, công nghiệp tan hoang. Ngân quỹ quốc gia chỉ còn 1,2 triệu đồng Đông Dương.</li>
+        <li><strong>Văn hóa - Xã hội ("Giặc dốt"):</strong> Hơn 90% dân số mù chữ do chính sách ngu dân của thực dân Pháp.</li>
+    </ul>
+    
+    <h3 id="event-4">2. Sách lược tài tình: "Dĩ bất biến, ứng vạn biến"</h3>
+    <ul>
+        <li><strong>Giải quyết nạn đói và dốt:</strong> Phát động "Hũ gạo cứu đói", "Tuần lễ vàng", lập "Bình dân học vụ".</li>
+        <li><strong>Ngoại giao khôn khéo:</strong>
+            <ul>
+                <li><em>Giai đoạn trước 6/3/1946:</em> Hòa hoãn với quân Tưởng ở <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span> để tập trung chống Pháp ở <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>.</li>
+                <li><em>Giai đoạn từ 6/3/1946 đến trước 19/12/1946:</em> Ký <strong>Hiệp định Sơ bộ (6/3/1946)</strong> và <strong>Tạm ước (14/9/1946)</strong> với Pháp để mượn tay Pháp đuổi 20 vạn quân Tưởng về nước, tranh thủ thời gian hòa bình củng cố lực lượng.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2 id="phan-2">III. Bùng nổ Kháng chiến toàn quốc (12/1946)</h2>
+    
+    <h3 id="event-5">1. Sự bội ước của thực dân Pháp</h3>
+    <p>Mặc dù ta đã nhân nhượng, thực dân Pháp vẫn bộc lộ rõ dã tâm cướp nước ta một lần nữa. Đỉnh điểm là ngày 18/12/1946, Pháp gửi tối hậu thư đòi giải tán lực lượng tự vệ chiến đấu và giao quyền kiểm soát Thủ đô. Sự nhân nhượng của ta đã đến giới hạn cuối cùng.</p>
+    
+    <h3 id="event-6">2. Lời kêu gọi Toàn quốc kháng chiến</h3>
+    <p>Đêm 19/12/1946, Chủ tịch Hồ Chí Minh ra <em>Lời kêu gọi Toàn quốc kháng chiến</em>:</p>
+    <blockquote>
+        "Hỡi đồng bào toàn quốc!<br>
+        Chúng ta muốn hòa bình, chúng ta phải nhân nhượng. Nhưng chúng ta càng nhân nhượng,<br>
+        thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa!<br>
+        Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước,<br>
+        nhất định không chịu làm nô lệ."
+    </blockquote>
+    
+    <h3>3. Đường lối kháng chiến độc đáo</h3>
+    <ul>
+        <li><strong>Kháng chiến toàn dân:</strong> Dựa vào sức mạnh khối đại đoàn kết toàn dân.</li>
+        <li><strong>Kháng chiến toàn diện:</strong> Đánh địch trên mọi mặt trận.</li>
+        <li><strong>Kháng chiến trường kỳ:</strong> Đánh lâu dài để chuyển hóa so sánh lực lượng (từ yếu thành mạnh).</li>
+        <li><strong>Tự lực cánh sinh:</strong> Dựa vào sức mình là chính.</li>
+    </ul>
+    
+    <h3 id="event-7">4. Cuộc chiến đấu ở các đô thị phía Bắc vĩ tuyến 16 (Cuối 1946 - Đầu 1947)</h3>
+    <ul>
+        <li><strong>Mục đích:</strong> Tiêu hao sinh lực địch, giam chân địch trong thành phố nhằm bảo vệ cơ quan đầu não, tạo điều kiện cho cả nước chuyển vào trạng thái chiến tranh và nhân dân tản cư an toàn lên chiến khu.</li>
+        <li><strong>Diễn biến tiêu biểu:</strong>
+            <ul>
+                <li><strong>Tại Thủ đô <span class="location" onclick="showLocationInfo('Hà Nội')">Hà Nội</span>:</strong> Cuộc chiến đấu diễn ra ác liệt nhất. Lực lượng Vệ quốc quân và tự vệ chiến đấu (tiêu biểu là Trung đoàn Thủ Đô) với tinh thần "Quyết tử để Tổ quốc quyết sinh" đã kiên cường bám trụ 60 ngày đêm trong lòng địch, giành giật từng ngôi nhà, góc phố. Đêm 17/2/1947, Trung đoàn Thủ Đô rút lui an toàn qua <span class="location" onclick="showLocationInfo('Sông Hồng')">sông Hồng</span> lên chiến khu.</li>
+                <li><strong>Tại các đô thị khác:</strong> Ở <span class="location" onclick="showLocationInfo('Nam Định')">Nam Định</span>, <span class="location" onclick="showLocationInfo('Huế')">Huế</span>, <span class="location" onclick="showLocationInfo('Đà Nẵng')">Đà Nẵng</span>... quân dân ta cũng chủ động nổ súng tấn công, bao vây và giam chân địch nhiều ngày, làm phá sản hoàn toàn âm mưu đánh úp của thực dân Pháp.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2 id="phan-3">IV. Các chiến dịch quân sự lớn và sự chuyển biến chiến lược (1947 - 1950)</h2>
+    
+    <h3 id="event-8">1. Chiến dịch Việt Bắc Thu - Đông 1947: Đập tan kế hoạch "Đánh nhanh thắng nhanh"</h3>
+    <ul>
+        <li><strong>Âm mưu của Pháp:</strong> Huy động 12.000 quân kẹp chặt căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> nhằm tiêu diệt cơ quan đầu não kháng chiến và quân chủ lực của ta.</li>
+        <li><strong>Diễn biến chiến dịch:</strong>
+            <ul>
+                <li>Ngày 7/10/1947, Pháp bất ngờ cho quân dù nhảy xuống <span class="location" onclick="showLocationInfo('Bắc Kạn')">Bắc Kạn</span>, <span class="location" onclick="showLocationInfo('Chợ Mới')">Chợ Mới</span>, <span class="location" onclick="showLocationInfo('Chợ Đồn')">Chợ Đồn</span>. Cùng lúc, binh đoàn bộ binh từ <span class="location" onclick="showLocationInfo('Lạng Sơn')">Lạng Sơn</span> tiến theo Đường số 4 lên <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> rồi vòng xuống <span class="location" onclick="showLocationInfo('Bắc Kạn')">Bắc Kạn</span> tạo thành gọng kìm phía Đông.</li>
+                <li>Ngày 9/10/1947, binh đoàn thủy - bộ ngược <span class="location" onclick="showLocationInfo('Sông Hồng')">sông Hồng</span> và <span class="location" onclick="showLocationInfo('Sông Lô')">sông Lô</span> lên <span class="location" onclick="showLocationInfo('Tuyên Quang')">Tuyên Quang</span>, <span class="location" onclick="showLocationInfo('Chiêm Hóa')">Chiêm Hóa</span> tạo thành gọng kìm phía Tây.</li>
+            </ul>
+        </li>
+        <li><strong>Quân ta phản công:</strong> Ta chủ động chia cắt địch. Tại mặt trận Đường số 4, quân ta phục kích đánh chặn địch dữ dội, tiêu biểu là trận <span class="location" onclick="showLocationInfo('Đèo Bông Lau')">đèo Bông Lau</span> (30/10/1947) tiêu diệt nhiều xe cơ giới. Tại mặt trận <span class="location" onclick="showLocationInfo('Sông Lô')">sông Lô</span>, pháo binh ta bắn chìm nhiều tàu chiến Pháp ở <span class="location" onclick="showLocationInfo('Đoan Hùng')">Đoan Hùng</span>, <span class="location" onclick="showLocationInfo('Khe Lau')">Khe Lau</span>.</li>
+        <li id="event-8-result"><strong>Kết quả:</strong> Ta bẻ gãy các gọng kìm của địch, quân Pháp buộc phải rút chạy. Kế hoạch "đánh nhanh thắng nhanh" phá sản hoàn toàn, Pháp phải chuyển sang đánh lâu dài với ta.</li>
+    </ul>
+    
+    <h3>2. Giai đoạn bản lề: Cầm cự và phát triển chiến tranh du kích (1948 - 1949)</h3>
+    <p>Pháp chuyển sang chính sách "Dùng người Việt đánh người Việt, lấy chiến tranh nuôi chiến tranh". Ta đáp trả bằng việc đẩy mạnh chiến tranh du kích, đưa "Đại đội độc lập, tiểu đoàn tập trung" luồn sâu vào vùng địch hậu, phá hoại kinh tế địch và củng cố lực lượng vũ trang 3 thứ quân.</p>
+    
+    <h3 id="event-9">3. Kế hoạch Rơ-ve (1949) và sự can thiệp sâu của Mỹ</h3>
+    <ul>
+        <li><strong>Bối cảnh:</strong> Cách mạng Trung Quốc thành công (1949), cách mạng Việt Nam thoát khỏi thế cô lập và bắt đầu nhận được sự ủng hộ quốc tế. Lo sợ trước làn sóng này, Mỹ bắt đầu can thiệp sâu vào chiến tranh <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>, tăng cường viện trợ tài chính và quân sự cho Pháp.</li>
+        <li><strong>Nội dung Kế hoạch Rơ-ve (Revers):</strong> Tháng 5/1949, với sự đồng ý của Mỹ, Tổng tham mưu trưởng quân đội Pháp là Rơ-ve sang <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span> và đề ra kế hoạch mới nhằm lấy lại ưu thế:
+            <ul>
+                <li><strong>Khóa chặt biên giới Việt - Trung:</strong> Bằng cách tăng cường hệ thống phòng ngự trên Đường số 4 (từ <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> đến Đình Lập) để ngăn chặn sự chi viện của cách mạng thế giới cho Việt Nam.</li>
+                <li><strong>Thiết lập "Hành lang Đông - Tây":</strong> (<span class="location" onclick="showLocationInfo('Hải Phòng')">Hải Phòng</span> - <span class="location" onclick="showLocationInfo('Hà Nội')">Hà Nội</span> - <span class="location" onclick="showLocationInfo('Hòa Bình')">Hòa Bình</span> - <span class="location" onclick="showLocationInfo('Sơn La')">Sơn La</span>) nhằm chia cắt, cô lập hoàn toàn căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> với đồng bằng Liên khu III và Khu IV.</li>
+            </ul>
+        </li>
+        <li><em>=> Chính Kế hoạch Rơ-ve đã đẩy căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> vào thế bị bao vây, buộc Trung ương Đảng ta phải quyết định mở Chiến dịch Biên giới để phá vỡ thế gọng kìm này.</em></li>
+    </ul>
+    
+    <h3 id="event-10">4. Chiến dịch Biên giới Thu - Đông 1950: Bước ngoặt vĩ đại</h3>
+    <ul>
+        <li><strong>Mục tiêu của ta:</strong> Tiêu diệt sinh lực địch, phá tan Kế hoạch Rơ-ve, khai thông biên giới, mở rộng căn cứ địa.</li>
+        <li><strong>Diễn biến chiến dịch:</strong>
+            <ul>
+                <li><strong>Trận mở màn (Đánh điểm):</strong> Sáng 16/9/1950, quân ta nổ súng tấn công cứ điểm <span class="location" onclick="showLocationInfo('Đông Khê')">Đông Khê</span>. Đến 18/9, ta tiêu diệt hoàn toàn cứ điểm này. Tuyến phòng ngự Đường số 4 của địch bị cắt làm đôi.</li>
+                <li><strong>Chiến thuật diệt viện:</strong> Mất <span class="location" onclick="showLocationInfo('Đông Khê')">Đông Khê</span>, quân Pháp ở <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> bị cô lập, phải rút chạy (do Charton chỉ huy). Pháp vội điều binh đoàn từ <span class="location" onclick="showLocationInfo('Thất Khê')">Thất Khê</span> lên đón ứng cứu (do Le Page chỉ huy).</li>
+                <li>Quân ta chủ động mai phục, tiêu diệt và bắt sống toàn bộ hai binh đoàn của Charton và Le Page trên Đường số 4.</li>
+                <li>Thất bại nặng nề, đến 22/10/1950, Pháp buộc phải tháo chạy khỏi hệ thống phòng ngự trên Đường số 4.</li>
+            </ul>
+        </li>
+        <li id="event-10-result"><strong>Kết quả & Ý nghĩa chiến lược:</strong> Lần đầu tiên ta chủ động mở chiến dịch lớn và thắng lợi. Hàng lang Đông - Tây bị chọc thủng, Kế hoạch Rơ-ve phá sản. Ta chính thức giành được <strong>quyền chủ động chiến lược trên chiến trường chính Bắc Bộ</strong>.</li>
+    </ul>
+    
+    <h3 id="event-11">5. Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950): Phản ứng của Pháp sau thất bại</h3>
+    <ul>
+        <li><strong>Bối cảnh:</strong> Thất bại ở Biên giới Thu - Đông 1950 làm nước Pháp chấn động. Để cứu vãn tình thế và nhận thêm viện trợ từ Mỹ, tháng 12/1950, Pháp cử Đại tướng Đờ Lát đờ Tát-xi-nhi (De Lattre de Tassigny) sang làm Cao ủy kiêm Tổng chỉ huy quân đội tại <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>.</li>
+        <li><strong>Nội dung kế hoạch:</strong>
+            <ul>
+                <li>Gấp rút xây dựng quân đội quốc gia (quân đội tay sai) để bù đắp thiếu hụt lực lượng.</li>
+                <li>Xây dựng phòng tuyến "boong-ke" (hệ thống lô cốt xi măng cốt thép) kiên cố bao quanh đồng bằng Bắc Bộ (Phòng tuyến Đờ Lát đờ Tát-xi-nhi) nhằm ngăn chặn chủ lực của ta tiến công.</li>
+                <li>Tiến hành chiến tranh tổng lực, càn quét khốc liệt vùng đồng bằng để vơ vét sức người, sức của.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>V. Bảng đánh giá sự chuyển biến của Kháng chiến (1947 vs 1950)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu chí so sánh</th>
+                <th>Chiến dịch Việt Bắc (1947)</th>
+                <th>Chiến dịch Biên giới (1950)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Thế chủ động</strong></td>
+                <td>Pháp chủ động tấn công, ta ở thế bị động phòng ngự.</td>
+                <td>Ta hoàn toàn chủ động mở chiến dịch tấn công quy mô lớn.</td>
+            </tr>
+            <tr>
+                <td><strong>Hình thức tác chiến</strong></td>
+                <td>Chủ yếu là đánh du kích, phục kích lẻ tẻ cấp nhỏ.</td>
+                <td>Tác chiến hiệp đồng binh chủng, cấp đại đoàn, vận động chiến.</td>
+            </tr>
+            <tr>
+                <td><strong>Kết quả chiến lược</strong></td>
+                <td>Đập tan "đánh nhanh thắng nhanh", bảo vệ cơ quan đầu não.</td>
+                <td>Tiêu diệt sinh lực lớn, giải phóng biên giới, giành quyền chủ động.</td>
+            </tr>
+            <tr>
+                <td><strong>Vị thế quốc tế</strong></td>
+                <td>Việt Nam bị bao vây, cô lập với thế giới.</td>
+                <td>Phá vỡ thế bao vây, nối liền với các nước XHCN.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>VI. Tổng kết</h2>
+    <p>Giai đoạn 1945 - 1950 là một bản anh hùng ca về ý chí tự lực tự cường của dân tộc Việt Nam. Đi lên từ hai bàn tay trắng, đối mặt với sự bao vây của các cường quốc đế quốc, Đảng và nhân dân ta đã kiên trì thực hiện đường lối chiến tranh nhân dân. Thắng lợi của Chiến dịch Biên giới 1950 không chỉ phá vỡ Kế hoạch Rơ-ve, đánh bại âm mưu cô lập của Mỹ - Pháp, mà còn tạo ra bước ngoặt vĩ đại. Bất chấp những nỗ lực vớt vát cuối năm 1950 của Đờ Lát đờ Tát-xi-nhi, quân dân ta đã có đà tiến vững chắc để bước vào giai đoạn tổng phản công, hướng tới trận quyết chiến chiến lược <span class="location" onclick="showLocationInfo('Điện Biên Phủ')">Điện Biên Phủ</span> năm 1954.</p>
+</div>
+
+<script>
+    // --- SCRIPT DROPDOWN MENU ---
+    function toggleMenu() {
+        document.getElementById("eventMenu").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn') && !event.target.closest('.modal-content')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+        
+        // Đóng modal khi bấm ra ngoài
+        var modal = document.getElementById("locationModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // --- CƠ SỞ DỮ LIỆU ĐỊA DANH (Trích xuất mô phỏng từ Wikipedia) ---
+    const wikiData = {
+        "Đông Dương": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Indochine_fran%C3%A7aise_%281931%29.jpg/640px-Indochine_fran%C3%A7aise_%281931%29.jpg",
+            desc: "Liên bang Đông Dương (gồm Việt Nam, Lào, Campuchia) là thuộc địa quan trọng nhất của Pháp ở Viễn Đông. Giai đoạn 1945, thực dân Pháp quyết tâm tái chiếm khu vực này sau khi Nhật Bản đầu hàng Đồng Minh nhằm khôi phục vị thế cường quốc."
+        },
+        "Sài Gòn": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Saigon_after_1945_coup.jpg/640px-Saigon_after_1945_coup.jpg",
+            desc: "Sài Gòn năm 1945 là trung tâm kinh tế, chính trị lớn nhất miền Nam. Đêm 22 rạng sáng 23/9/1945, được sự giúp sức của quân Anh, thực dân Pháp đã nổ súng đánh chiếm trụ sở Ủy ban Nhân dân Nam Bộ tại Sài Gòn, mở đầu cuộc xâm lược Việt Nam lần thứ hai."
+        },
+        "Hà Nội": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Quyet_tu_quan_Ha_Noi_1946.jpg/640px-Quyet_tu_quan_Ha_Noi_1946.jpg",
+            desc: "Thủ đô Hà Nội cuối năm 1946 là nơi chứng kiến những trận đánh ác liệt nhất trong những ngày đầu Toàn quốc kháng chiến. Tiêu biểu là cuộc chiến đấu anh dũng 60 ngày đêm của Trung đoàn Thủ Đô nhằm kìm chân địch, bảo vệ Trung ương Đảng rút lên chiến khu."
+        },
+        "Việt Bắc": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/ATK_Dinh_Hoa.jpg/640px-ATK_Dinh_Hoa.jpg",
+            desc: "Căn cứ địa Việt Bắc (gồm các tỉnh Cao - Bắc - Lạng - Thái - Tuyên - Hà) được mệnh danh là 'Thủ đô gió ngàn'. Địa hình đồi núi hiểm trở nơi đây đã che chở cơ quan đầu não kháng chiến và chứng kiến sự thất bại thảm hại của quân Pháp trong chiến dịch Thu - Đông 1947."
+        },
+        "Cao Bằng": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cao_Bang_1950.jpg/640px-Cao_Bang_1950.jpg",
+            desc: "Cao Bằng là một mắt xích quan trọng trên tuyến phòng thủ biên giới Đường số 4 của Pháp. Trong Chiến dịch Biên giới Thu Đông 1950, quân Pháp tại đây đã bị cô lập hoàn toàn và buộc phải tháo chạy sau khi ta tiêu diệt cứ điểm Đông Khê."
+        },
+        "Đông Khê": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Tran_Dong_Khe_1950.jpg/640px-Tran_Dong_Khe_1950.jpg",
+            desc: "Cứ điểm Đông Khê là mục tiêu mở màn cho Chiến dịch Biên giới Thu Đông 1950. Việc ta tiêu diệt Đông Khê (18/9/1950) đã chặt đứt phòng tuyến Đường 4, đẩy quân Pháp vào thế bị động và dẫn đến sự sụp đổ của toàn bộ hệ thống phòng ngự Rơ-ve."
+        },
+        "Điện Biên Phủ": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Dien_Bien_Phu_1954.jpg/640px-Dien_Bien_Phu_1954.jpg",
+            desc: "Lòng chảo Điện Biên Phủ thuộc vùng núi Tây Bắc. Về sau, nơi đây trở thành Tập đoàn cứ điểm mạnh nhất Đông Dương của Pháp và là nơi diễn ra trận quyết chiến chiến lược chấn động địa cầu năm 1954, kết thúc hoàn toàn cuộc kháng chiến 9 năm."
+        },
+        "Sông Lô": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Song_Lo_historical.jpg/640px-Song_Lo_historical.jpg",
+            desc: "Sông Lô là tuyến đường thủy huyết mạch trong chiến dịch Việt Bắc 1947. Tại đây, pháo binh quân đội Việt Nam đã lập chiến công vang dội tại Đoan Hùng, Khe Lau, bắn cháy nhiều tàu chiến Pháp, bẻ gãy gọng kìm đường thủy của địch."
+        },
+        "Nam Định": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nam_Dinh_1946.jpg/640px-Nam_Dinh_1946.jpg",
+            desc: "Thành phố Nam Định là một trong những mặt trận quan trọng trong cuộc chiến đấu ở các đô thị (cuối 1946 - đầu 1947). Quân dân ta đã bao vây chặt quân Pháp trong xưởng sợi, giam chân địch trong nhiều ngày để nhân dân tản cư."
+        },
+        "Đèo Bông Lau": {
+            desc: "Đèo Bông Lau nằm trên Quốc lộ 4A thuộc tỉnh Lạng Sơn. Chiều 30/10/1947, quân ta đã phục kích và tiêu diệt một đoàn xe cơ giới quân sự lớn của Pháp tại đây, thu nhiều vũ khí và quân trang quân dụng, góp phần bẻ gãy gọng kìm phía Đông của địch."
+        }
+    };
+
+    // Hàm mặc định cho các địa danh không có trong danh sách chi tiết
+    const defaultData = {
+        desc: "Địa danh này giữ vai trò chiến lược trong các cuộc hành quân, giao tranh hoặc là điểm nút giao thông quan trọng của hai bên lực lượng trong thời kỳ Kháng chiến chống Pháp (1945 - 1950)."
+    };
+
+    // --- HÀM HIỂN THỊ MODAL ---
+    function showLocationInfo(locationName) {
+        var modal = document.getElementById("locationModal");
+        var title = document.getElementById("modal-title");
+        var img = document.getElementById("modal-img");
+        var desc = document.getElementById("modal-desc");
+
+        // Lấy dữ liệu hoặc dùng dữ liệu mặc định
+        var data = wikiData[locationName] || defaultData;
+
+        title.innerText = "📍 " + locationName + " (Giai đoạn 1945-1950)";
+        desc.innerText = data.desc;
+
+        // Xử lý hình ảnh
+        if (data.img) {
+            img.src = data.img;
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+
+        modal.style.display = "block";
+    }
+
+    // --- HÀM ĐÓNG MODAL ---
+    function closeModal() {
+        document.getElementById("locationModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>rset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyết trình Kháng chiến chống Pháp (1945 - 1950)</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b;
+            --bg-color: #f3f4f6;
+            --text-color: #333;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- CSS CHO MENU DROP DOWN --- */
+        .dropdown {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
+        }
+        .dropbtn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #1a252f;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow-y: auto;
+            max-height: 80vh;
+            margin-top: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--secondary-color);
+        }
+        .show {display: block;}
+
+        /* --- CSS CHO CONTAINER TÀI LIỆU --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 50px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        
+        /* CẬP NHẬT: CSS CHO ĐỊA DANH CLICK ĐƯỢC */
+        .location {
+            background-color: #fdebd0;
+            color: #d35400;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer; /* Thêm con trỏ chuột dạng bàn tay */
+            transition: all 0.2s;
+            border-bottom: 1px dashed #d35400;
+        }
+        .location:hover {
+            background-color: #f5b041;
+            color: white;
+        }
+        .location::before {
+            content: '📍';
+            font-size: 14px;
+        }
+
+        /* --- CSS CHO MODAL (BẢNG THÔNG TIN ĐỊA DANH) --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.6); 
+            backdrop-filter: blur(3px);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            animation: animatetop 0.4s;
+        }
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        #modal-title {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        #modal-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 15px 0;
+            display: none;
+        }
+        #modal-desc {
+            font-size: 15px;
+            color: #444;
+            text-align: justify;
+        }
+        .wiki-source {
+            font-size: 12px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- CSS CHO MINDMAP --- */
+        .mindmap-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+        }
+        .mindmap-tree {
+            display: inline-flex;
+            padding: 20px;
+        }
+        .mindmap-tree ul {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 40px;
+            margin: 0;
+            list-style: none;
+        }
+        .mindmap-tree > ul {
+            padding-left: 0;
+        }
+        .mindmap-tree ul::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            border-top: 2px solid #9ca3af;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .mindmap-tree > ul::before {
+            display: none;
+        }
+        .mindmap-tree li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 12px 0;
+        }
+        .mindmap-tree > ul > li::before,
+        .mindmap-tree > ul > li::after {
+            display: none;
+        }
+        .mindmap-tree li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -20px;
+            border-left: 2px solid #9ca3af;
+            z-index: 1;
+        }
+        .mindmap-tree li:first-child::before {
+            top: 50%;
+        }
+        .mindmap-tree li:last-child::before {
+            bottom: 50%;
+        }
+        .mindmap-tree li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 20px;
+            border-top: 2px solid #9ca3af;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .node {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 14px;
+            color: #1f2937;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            position: relative;
+            max-width: 320px;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        a.node {
+            cursor: pointer;
+            color: #1d4ed8;
+            font-weight: 500;
+        }
+        a.node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.25);
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .arrow-icon {
+            color: #e11d48;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .root {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 6px 15px rgba(29, 78, 216, 0.3);
+        }
+        .level-2 {
+            border-color: #10b981;
+            font-weight: 600;
+        }
+        a.node.level-2 {
+            color: #047857;
+        }
+    </style>
+</head>
+<body>
+
+<!-- KHU VỰC HIỂN THỊ MODAL ĐỊA DANH -->
+<div id="locationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Tên Địa Danh</h2>
+        <img id="modal-img" src="" alt="Hình ảnh lịch sử">
+        <p id="modal-desc">Thông tin chi tiết về địa danh này vào thời điểm lịch sử 1945-1950...</p>
+        <div class="wiki-source">Nguồn: Trích xuất tổng hợp từ Wikipedia tiếng Việt</div>
+    </div>
+</div>
+
+<!-- Nút dropdown sự kiện -->
+<div class="dropdown">
+    <button onclick="toggleMenu()" class="dropbtn">☰ Danh mục sự kiện</button>
+    <div id="eventMenu" class="dropdown-content">
+        <a href="#mindmap-section" style="font-weight: bold; color: #2980b9;">🌟 0. Sơ đồ tư duy (Mindmap)</a>
+        <a href="#event-1">1. Hội nghị Potsdam (7-8/1945)</a>
+        <a href="#event-2">2. Pháp nổ súng đánh chiếm Sài Gòn (23/9/1945)</a>
+        <a href="#event-3">3. Hiệp ước Hoa - Pháp (28/2/1946)</a>
+        <a href="#event-4">4. Hiệp định Sơ bộ (6/3/1946) & Tạm ước (14/9/1946)</a>
+        <a href="#event-5">5. Pháp gửi tối hậu thư (18/12/1946)</a>
+        <a href="#event-6">6. Lời kêu gọi Toàn quốc kháng chiến (19/12/1946)</a>
+        <a href="#event-7">7. Cuộc chiến đấu ở các đô thị (Cuối 1946 - Đầu 1947)</a>
+        <a href="#event-8">8. Chiến dịch Việt Bắc Thu - Đông (1947)</a>
+        <a href="#event-9">9. Kế hoạch Rơ-ve (1949)</a>
+        <a href="#event-10">10. Chiến dịch Biên giới Thu - Đông (1950)</a>
+        <a href="#event-11">11. Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950)</a>
+    </div>
+</div>
+
+<!-- KHỐI 1: TỔNG QUAN & MINDMAP -->
+<div class="container" id="mindmap-section">
+    <h1>CUỘC KHÁNG CHIẾN CHỐNG THỰC DÂN PHÁP (1945 - 1950)</h1>
+    <h2 class="section-title">SƠ ĐỒ TƯ DUY TỔNG QUAN</h2>
+    
+    <div class="mindmap-wrapper">
+        <p style="text-align: center; color: #6b7280; font-style: italic; margin-top: 0;">(Bấm vào bất kỳ ô nào có mũi tên ➔ để di chuyển nhanh đến nội dung tương ứng)</p>
+        <div class="mindmap-tree">
+            <ul>
+                <li>
+                    <div class="node root">Kháng chiến chống Pháp<br>(1945 - 1950)</div>
+                    <ul>
+                        <li>
+                            <a href="#phan-1" class="node level-2">I. Bối cảnh & Tình hình trong nước <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li><a href="#event-1" class="node">Hội nghị Potsdam chia cắt Đông Dương <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-2-3" class="node">Đế quốc đồng lõa: Pháp chiếm Sài Gòn, Ký Hiệp ước Hoa - Pháp <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-khokhan" class="node">Khó khăn: "Thù trong, giặc ngoài", kinh tế kiệt quệ, 90% dân mù chữ <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-4" class="node">Sách lược "Dĩ bất biến": Hòa hoãn Tưởng, ký Hiệp định Sơ bộ & Tạm ước <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#phan-2" class="node level-2">II. Bùng nổ kháng chiến (12/1946) <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li><a href="#event-5" class="node">Pháp bội ước, gửi tối hậu thư ngày 18/12/1946 <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-6" class="node">Đường lối: Toàn dân, toàn diện, trường kỳ, tự lực cánh sinh <span class="arrow-icon">➔</span></a></li>
+                                <li><a href="#event-7" class="node">Giam chân địch ở đô thị (Hà Nội, Nam Định, Huế...) <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#phan-3" class="node level-2">III. Các chiến dịch quân sự lớn <span class="arrow-icon">➔</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#event-8" class="node">Việt Bắc (1947) <span class="arrow-icon">➔</span></a>
+                                    <ul>
+                                        <li><a href="#event-8-result" class="node">Đập tan kế hoạch "Đánh nhanh thắng nhanh" của Pháp <span class="arrow-icon">➔</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#event-10" class="node">Biên giới (1950) <span class="arrow-icon">➔</span></a>
+                                    <ul>
+                                        <li><a href="#event-9" class="node">Phá Kế hoạch Rơ-ve, chọc thủng Hành lang Đông - Tây <span class="arrow-icon">➔</span></a></li>
+                                        <li><a href="#event-10-result" class="node">Giành quyền chủ động chiến lược trên chiến trường Bắc Bộ <span class="arrow-icon">➔</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#event-11" class="node">Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950) <span class="arrow-icon">➔</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- KHỐI 2: NỘI DUNG CHI TIẾT -->
+<div class="container" id="content-section">
+    <h2 class="section-title" style="margin-bottom: 30px;">NỘI DUNG CHI TIẾT</h2>
+
+    <h2 id="phan-1">I. Bối cảnh quốc tế: Trật tự thế giới và nguyên nhân Pháp ngang nhiên quay lại xâm lược</h2>
+    <p>Tại sao vừa giành được độc lập, chúng ta lại lập tức phải đối mặt với nguy cơ xâm lược một lần nữa? Thực dân Pháp lấy đâu ra quyền lực và sự hậu thuẫn để ngang nhiên đưa quân trở lại <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>? Điều này bắt nguồn trực tiếp từ sự sắp xếp của các cường quốc thắng trận trong Trật tự thế giới mới (Trật tự Ianta).</p>
+    
+    <h3 id="event-1">1. Sự phân chia khu vực giải giáp quân Nhật theo Hội nghị Potsdam</h3>
+    <ul>
+        <li>Tại Hội nghị Potsdam (tháng 7 và 8/1945), các cường quốc Đồng minh (Anh, Mỹ, Liên Xô) đã thỏa thuận việc giải giáp quân đội Nhật Bản ở <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>. Theo đó, vĩ tuyến 16 được chọn làm ranh giới:</li>
+        <li><strong>Phía Bắc vĩ tuyến 16:</strong> Giao cho quân đội Trung Hoa Dân Quốc (Tưởng Giới Thạch).</li>
+        <li><strong>Phía Nam vĩ tuyến 16:</strong> Giao cho quân đội Anh.</li>
+        <li>Sự phân chia này hoàn toàn bỏ qua quyền tự quyết của nhân dân Việt Nam. Các nước Đồng minh tiến vào nước ta với danh nghĩa giải giáp quân Nhật, nhưng thực chất lại mang theo những toan tính địa chính trị riêng, tạo kẽ hở cho Pháp quay lại.</li>
+    </ul>
+    
+    <h3 id="event-2-3">2. Sự đồng lõa của các nước Đế quốc</h3>
+    <ul>
+        <li id="event-2"><strong>Sự tiếp tay của quân đội Anh ở <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>:</strong> Anh cũng là một quốc gia có nhiều thuộc địa ở châu Á. Việc Việt Nam giành độc lập đe dọa trực tiếp đến hệ thống thuộc địa của Anh. Do đó, khi vào <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>, quân Anh do tướng Gracey chỉ huy đã lấy cớ "giữ gìn trị an" để thả các tù binh Pháp, trang bị lại vũ khí cho chúng, dung túng và hỗ trợ lực lượng Pháp nổ súng đánh chiếm <span class="location" onclick="showLocationInfo('Sài Gòn')">Sài Gòn</span> vào rạng sáng 23/9/1945.</li>
+        <li id="event-3"><strong>Sự thỏa hiệp trắng trợn qua Hiệp ước Hoa - Pháp (2/1946):</strong> Ở <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span>, chính quyền Tưởng Giới Thạch ban đầu muốn tiêu diệt chính quyền cách mạng Việt Nam. Nhưng sau đó, do gặp khó khăn trong cuộc nội chiến với Đảng Cộng sản Trung Quốc, Tưởng đã bắt tay với Pháp. Ngày 28/2/1946, Pháp và Tưởng ký Hiệp ước Hoa - Pháp. Pháp trả lại một số quyền lợi cho Tưởng ở Trung Quốc, đổi lại, Tưởng đồng ý cho quân Pháp ra <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span> thay thế chúng giải giáp quân Nhật. Đây là một cuộc đổi chác thuộc địa bẩn thỉu trên lưng nhân dân ta.</li>
+    </ul>
+    
+    <h3>3. Thái độ của Mỹ và dã tâm của Pháp</h3>
+    <ul>
+        <li><strong>Thái độ của Mỹ:</strong> Sau Thế chiến II, Chiến tranh Lạnh dần hình thành. Mỹ cần lôi kéo Pháp làm đồng minh nòng cốt để chống lại ảnh hưởng của Liên Xô ở châu Âu. Do đó, dù Mỹ có lập trường "chống chủ nghĩa thực dân", họ vẫn làm ngơ, thậm chí ngầm ủng hộ và viện trợ để Pháp quay lại xâm lược <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>, nhằm ngăn chặn làn sóng cộng sản ở châu Á.</li>
+        <li><strong>Dã tâm của Pháp:</strong> Nước Pháp bị tàn phá nặng nề và chịu nhiều nhục nhã trong Thế chiến II. Giới cầm quyền Pháp (đứng đầu là De Gaulle) quyết tâm lấy lại "hòn ngọc Viễn Đông" (<span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>) để bòn rút tài nguyên tái thiết đất nước và khôi phục vị thế cường quốc trên trường quốc tế.</li>
+    </ul>
+    
+    <h2>II. Tình hình trong nước sau Cách mạng tháng Tám (9/1945 - 12/1946)</h2>
+    <p>Dưới tác động của bối cảnh quốc tế trên, nước Việt Nam Dân chủ Cộng hòa non trẻ lập tức rơi vào tình thế "ngàn cân treo sợi tóc".</p>
+    
+    <h3 id="event-khokhan">1. Những khó khăn đe dọa sự tồn vong của chế độ mới</h3>
+    <ul>
+        <li><strong>Ngoại xâm và nội phản ("Thù trong, giặc ngoài"):</strong> Chưa bao giờ trên đất nước ta lại có mặt cùng lúc nhiều kẻ thù đến thế (Quân Tưởng, Anh, Pháp, Nhật, và các tổ chức phản động Việt Quốc, Việt Cách).</li>
+        <li><strong>Kinh tế kiệt quệ ("Giặc đói"):</strong> Hậu quả của chính sách vơ vét gây ra nạn đói kinh hoàng làm khoảng 2 triệu người chết. Nông nghiệp đình đốn, công nghiệp tan hoang. Ngân quỹ quốc gia chỉ còn 1,2 triệu đồng Đông Dương.</li>
+        <li><strong>Văn hóa - Xã hội ("Giặc dốt"):</strong> Hơn 90% dân số mù chữ do chính sách ngu dân của thực dân Pháp.</li>
+    </ul>
+    
+    <h3 id="event-4">2. Sách lược tài tình: "Dĩ bất biến, ứng vạn biến"</h3>
+    <ul>
+        <li><strong>Giải quyết nạn đói và dốt:</strong> Phát động "Hũ gạo cứu đói", "Tuần lễ vàng", lập "Bình dân học vụ".</li>
+        <li><strong>Ngoại giao khôn khéo:</strong>
+            <ul>
+                <li><em>Giai đoạn trước 6/3/1946:</em> Hòa hoãn với quân Tưởng ở <span class="location" onclick="showLocationInfo('Miền Bắc')">miền Bắc</span> để tập trung chống Pháp ở <span class="location" onclick="showLocationInfo('Miền Nam')">miền Nam</span>.</li>
+                <li><em>Giai đoạn từ 6/3/1946 đến trước 19/12/1946:</em> Ký <strong>Hiệp định Sơ bộ (6/3/1946)</strong> và <strong>Tạm ước (14/9/1946)</strong> với Pháp để mượn tay Pháp đuổi 20 vạn quân Tưởng về nước, tranh thủ thời gian hòa bình củng cố lực lượng.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2 id="phan-2">III. Bùng nổ Kháng chiến toàn quốc (12/1946)</h2>
+    
+    <h3 id="event-5">1. Sự bội ước của thực dân Pháp</h3>
+    <p>Mặc dù ta đã nhân nhượng, thực dân Pháp vẫn bộc lộ rõ dã tâm cướp nước ta một lần nữa. Đỉnh điểm là ngày 18/12/1946, Pháp gửi tối hậu thư đòi giải tán lực lượng tự vệ chiến đấu và giao quyền kiểm soát Thủ đô. Sự nhân nhượng của ta đã đến giới hạn cuối cùng.</p>
+    
+    <h3 id="event-6">2. Lời kêu gọi Toàn quốc kháng chiến</h3>
+    <p>Đêm 19/12/1946, Chủ tịch Hồ Chí Minh ra <em>Lời kêu gọi Toàn quốc kháng chiến</em>:</p>
+    <blockquote>
+        "Hỡi đồng bào toàn quốc!<br>
+        Chúng ta muốn hòa bình, chúng ta phải nhân nhượng. Nhưng chúng ta càng nhân nhượng,<br>
+        thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa!<br>
+        Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước,<br>
+        nhất định không chịu làm nô lệ."
+    </blockquote>
+    
+    <h3>3. Đường lối kháng chiến độc đáo</h3>
+    <ul>
+        <li><strong>Kháng chiến toàn dân:</strong> Dựa vào sức mạnh khối đại đoàn kết toàn dân.</li>
+        <li><strong>Kháng chiến toàn diện:</strong> Đánh địch trên mọi mặt trận.</li>
+        <li><strong>Kháng chiến trường kỳ:</strong> Đánh lâu dài để chuyển hóa so sánh lực lượng (từ yếu thành mạnh).</li>
+        <li><strong>Tự lực cánh sinh:</strong> Dựa vào sức mình là chính.</li>
+    </ul>
+    
+    <h3 id="event-7">4. Cuộc chiến đấu ở các đô thị phía Bắc vĩ tuyến 16 (Cuối 1946 - Đầu 1947)</h3>
+    <ul>
+        <li><strong>Mục đích:</strong> Tiêu hao sinh lực địch, giam chân địch trong thành phố nhằm bảo vệ cơ quan đầu não, tạo điều kiện cho cả nước chuyển vào trạng thái chiến tranh và nhân dân tản cư an toàn lên chiến khu.</li>
+        <li><strong>Diễn biến tiêu biểu:</strong>
+            <ul>
+                <li><strong>Tại Thủ đô <span class="location" onclick="showLocationInfo('Hà Nội')">Hà Nội</span>:</strong> Cuộc chiến đấu diễn ra ác liệt nhất. Lực lượng Vệ quốc quân và tự vệ chiến đấu (tiêu biểu là Trung đoàn Thủ Đô) với tinh thần "Quyết tử để Tổ quốc quyết sinh" đã kiên cường bám trụ 60 ngày đêm trong lòng địch, giành giật từng ngôi nhà, góc phố. Đêm 17/2/1947, Trung đoàn Thủ Đô rút lui an toàn qua <span class="location" onclick="showLocationInfo('Sông Hồng')">sông Hồng</span> lên chiến khu.</li>
+                <li><strong>Tại các đô thị khác:</strong> Ở <span class="location" onclick="showLocationInfo('Nam Định')">Nam Định</span>, <span class="location" onclick="showLocationInfo('Huế')">Huế</span>, <span class="location" onclick="showLocationInfo('Đà Nẵng')">Đà Nẵng</span>... quân dân ta cũng chủ động nổ súng tấn công, bao vây và giam chân địch nhiều ngày, làm phá sản hoàn toàn âm mưu đánh úp của thực dân Pháp.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2 id="phan-3">IV. Các chiến dịch quân sự lớn và sự chuyển biến chiến lược (1947 - 1950)</h2>
+    
+    <h3 id="event-8">1. Chiến dịch Việt Bắc Thu - Đông 1947: Đập tan kế hoạch "Đánh nhanh thắng nhanh"</h3>
+    <ul>
+        <li><strong>Âm mưu của Pháp:</strong> Huy động 12.000 quân kẹp chặt căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> nhằm tiêu diệt cơ quan đầu não kháng chiến và quân chủ lực của ta.</li>
+        <li><strong>Diễn biến chiến dịch:</strong>
+            <ul>
+                <li>Ngày 7/10/1947, Pháp bất ngờ cho quân dù nhảy xuống <span class="location" onclick="showLocationInfo('Bắc Kạn')">Bắc Kạn</span>, <span class="location" onclick="showLocationInfo('Chợ Mới')">Chợ Mới</span>, <span class="location" onclick="showLocationInfo('Chợ Đồn')">Chợ Đồn</span>. Cùng lúc, binh đoàn bộ binh từ <span class="location" onclick="showLocationInfo('Lạng Sơn')">Lạng Sơn</span> tiến theo Đường số 4 lên <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> rồi vòng xuống <span class="location" onclick="showLocationInfo('Bắc Kạn')">Bắc Kạn</span> tạo thành gọng kìm phía Đông.</li>
+                <li>Ngày 9/10/1947, binh đoàn thủy - bộ ngược <span class="location" onclick="showLocationInfo('Sông Hồng')">sông Hồng</span> và <span class="location" onclick="showLocationInfo('Sông Lô')">sông Lô</span> lên <span class="location" onclick="showLocationInfo('Tuyên Quang')">Tuyên Quang</span>, <span class="location" onclick="showLocationInfo('Chiêm Hóa')">Chiêm Hóa</span> tạo thành gọng kìm phía Tây.</li>
+            </ul>
+        </li>
+        <li><strong>Quân ta phản công:</strong> Ta chủ động chia cắt địch. Tại mặt trận Đường số 4, quân ta phục kích đánh chặn địch dữ dội, tiêu biểu là trận <span class="location" onclick="showLocationInfo('Đèo Bông Lau')">đèo Bông Lau</span> (30/10/1947) tiêu diệt nhiều xe cơ giới. Tại mặt trận <span class="location" onclick="showLocationInfo('Sông Lô')">sông Lô</span>, pháo binh ta bắn chìm nhiều tàu chiến Pháp ở <span class="location" onclick="showLocationInfo('Đoan Hùng')">Đoan Hùng</span>, <span class="location" onclick="showLocationInfo('Khe Lau')">Khe Lau</span>.</li>
+        <li id="event-8-result"><strong>Kết quả:</strong> Ta bẻ gãy các gọng kìm của địch, quân Pháp buộc phải rút chạy. Kế hoạch "đánh nhanh thắng nhanh" phá sản hoàn toàn, Pháp phải chuyển sang đánh lâu dài với ta.</li>
+    </ul>
+    
+    <h3>2. Giai đoạn bản lề: Cầm cự và phát triển chiến tranh du kích (1948 - 1949)</h3>
+    <p>Pháp chuyển sang chính sách "Dùng người Việt đánh người Việt, lấy chiến tranh nuôi chiến tranh". Ta đáp trả bằng việc đẩy mạnh chiến tranh du kích, đưa "Đại đội độc lập, tiểu đoàn tập trung" luồn sâu vào vùng địch hậu, phá hoại kinh tế địch và củng cố lực lượng vũ trang 3 thứ quân.</p>
+    
+    <h3 id="event-9">3. Kế hoạch Rơ-ve (1949) và sự can thiệp sâu của Mỹ</h3>
+    <ul>
+        <li><strong>Bối cảnh:</strong> Cách mạng Trung Quốc thành công (1949), cách mạng Việt Nam thoát khỏi thế cô lập và bắt đầu nhận được sự ủng hộ quốc tế. Lo sợ trước làn sóng này, Mỹ bắt đầu can thiệp sâu vào chiến tranh <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>, tăng cường viện trợ tài chính và quân sự cho Pháp.</li>
+        <li><strong>Nội dung Kế hoạch Rơ-ve (Revers):</strong> Tháng 5/1949, với sự đồng ý của Mỹ, Tổng tham mưu trưởng quân đội Pháp là Rơ-ve sang <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span> và đề ra kế hoạch mới nhằm lấy lại ưu thế:
+            <ul>
+                <li><strong>Khóa chặt biên giới Việt - Trung:</strong> Bằng cách tăng cường hệ thống phòng ngự trên Đường số 4 (từ <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> đến Đình Lập) để ngăn chặn sự chi viện của cách mạng thế giới cho Việt Nam.</li>
+                <li><strong>Thiết lập "Hành lang Đông - Tây":</strong> (<span class="location" onclick="showLocationInfo('Hải Phòng')">Hải Phòng</span> - <span class="location" onclick="showLocationInfo('Hà Nội')">Hà Nội</span> - <span class="location" onclick="showLocationInfo('Hòa Bình')">Hòa Bình</span> - <span class="location" onclick="showLocationInfo('Sơn La')">Sơn La</span>) nhằm chia cắt, cô lập hoàn toàn căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> với đồng bằng Liên khu III và Khu IV.</li>
+            </ul>
+        </li>
+        <li><em>=> Chính Kế hoạch Rơ-ve đã đẩy căn cứ địa <span class="location" onclick="showLocationInfo('Việt Bắc')">Việt Bắc</span> vào thế bị bao vây, buộc Trung ương Đảng ta phải quyết định mở Chiến dịch Biên giới để phá vỡ thế gọng kìm này.</em></li>
+    </ul>
+    
+    <h3 id="event-10">4. Chiến dịch Biên giới Thu - Đông 1950: Bước ngoặt vĩ đại</h3>
+    <ul>
+        <li><strong>Mục tiêu của ta:</strong> Tiêu diệt sinh lực địch, phá tan Kế hoạch Rơ-ve, khai thông biên giới, mở rộng căn cứ địa.</li>
+        <li><strong>Diễn biến chiến dịch:</strong>
+            <ul>
+                <li><strong>Trận mở màn (Đánh điểm):</strong> Sáng 16/9/1950, quân ta nổ súng tấn công cứ điểm <span class="location" onclick="showLocationInfo('Đông Khê')">Đông Khê</span>. Đến 18/9, ta tiêu diệt hoàn toàn cứ điểm này. Tuyến phòng ngự Đường số 4 của địch bị cắt làm đôi.</li>
+                <li><strong>Chiến thuật diệt viện:</strong> Mất <span class="location" onclick="showLocationInfo('Đông Khê')">Đông Khê</span>, quân Pháp ở <span class="location" onclick="showLocationInfo('Cao Bằng')">Cao Bằng</span> bị cô lập, phải rút chạy (do Charton chỉ huy). Pháp vội điều binh đoàn từ <span class="location" onclick="showLocationInfo('Thất Khê')">Thất Khê</span> lên đón ứng cứu (do Le Page chỉ huy).</li>
+                <li>Quân ta chủ động mai phục, tiêu diệt và bắt sống toàn bộ hai binh đoàn của Charton và Le Page trên Đường số 4.</li>
+                <li>Thất bại nặng nề, đến 22/10/1950, Pháp buộc phải tháo chạy khỏi hệ thống phòng ngự trên Đường số 4.</li>
+            </ul>
+        </li>
+        <li id="event-10-result"><strong>Kết quả & Ý nghĩa chiến lược:</strong> Lần đầu tiên ta chủ động mở chiến dịch lớn và thắng lợi. Hàng lang Đông - Tây bị chọc thủng, Kế hoạch Rơ-ve phá sản. Ta chính thức giành được <strong>quyền chủ động chiến lược trên chiến trường chính Bắc Bộ</strong>.</li>
+    </ul>
+    
+    <h3 id="event-11">5. Kế hoạch Đờ Lát đờ Tát-xi-nhi (12/1950): Phản ứng của Pháp sau thất bại</h3>
+    <ul>
+        <li><strong>Bối cảnh:</strong> Thất bại ở Biên giới Thu - Đông 1950 làm nước Pháp chấn động. Để cứu vãn tình thế và nhận thêm viện trợ từ Mỹ, tháng 12/1950, Pháp cử Đại tướng Đờ Lát đờ Tát-xi-nhi (De Lattre de Tassigny) sang làm Cao ủy kiêm Tổng chỉ huy quân đội tại <span class="location" onclick="showLocationInfo('Đông Dương')">Đông Dương</span>.</li>
+        <li><strong>Nội dung kế hoạch:</strong>
+            <ul>
+                <li>Gấp rút xây dựng quân đội quốc gia (quân đội tay sai) để bù đắp thiếu hụt lực lượng.</li>
+                <li>Xây dựng phòng tuyến "boong-ke" (hệ thống lô cốt xi măng cốt thép) kiên cố bao quanh đồng bằng Bắc Bộ (Phòng tuyến Đờ Lát đờ Tát-xi-nhi) nhằm ngăn chặn chủ lực của ta tiến công.</li>
+                <li>Tiến hành chiến tranh tổng lực, càn quét khốc liệt vùng đồng bằng để vơ vét sức người, sức của.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>V. Bảng đánh giá sự chuyển biến của Kháng chiến (1947 vs 1950)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu chí so sánh</th>
+                <th>Chiến dịch Việt Bắc (1947)</th>
+                <th>Chiến dịch Biên giới (1950)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Thế chủ động</strong></td>
+                <td>Pháp chủ động tấn công, ta ở thế bị động phòng ngự.</td>
+                <td>Ta hoàn toàn chủ động mở chiến dịch tấn công quy mô lớn.</td>
+            </tr>
+            <tr>
+                <td><strong>Hình thức tác chiến</strong></td>
+                <td>Chủ yếu là đánh du kích, phục kích lẻ tẻ cấp nhỏ.</td>
+                <td>Tác chiến hiệp đồng binh chủng, cấp đại đoàn, vận động chiến.</td>
+            </tr>
+            <tr>
+                <td><strong>Kết quả chiến lược</strong></td>
+                <td>Đập tan "đánh nhanh thắng nhanh", bảo vệ cơ quan đầu não.</td>
+                <td>Tiêu diệt sinh lực lớn, giải phóng biên giới, giành quyền chủ động.</td>
+            </tr>
+            <tr>
+                <td><strong>Vị thế quốc tế</strong></td>
+                <td>Việt Nam bị bao vây, cô lập với thế giới.</td>
+                <td>Phá vỡ thế bao vây, nối liền với các nước XHCN.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>VI. Tổng kết</h2>
+    <p>Giai đoạn 1945 - 1950 là một bản anh hùng ca về ý chí tự lực tự cường của dân tộc Việt Nam. Đi lên từ hai bàn tay trắng, đối mặt với sự bao vây của các cường quốc đế quốc, Đảng và nhân dân ta đã kiên trì thực hiện đường lối chiến tranh nhân dân. Thắng lợi của Chiến dịch Biên giới 1950 không chỉ phá vỡ Kế hoạch Rơ-ve, đánh bại âm mưu cô lập của Mỹ - Pháp, mà còn tạo ra bước ngoặt vĩ đại. Bất chấp những nỗ lực vớt vát cuối năm 1950 của Đờ Lát đờ Tát-xi-nhi, quân dân ta đã có đà tiến vững chắc để bước vào giai đoạn tổng phản công, hướng tới trận quyết chiến chiến lược <span class="location" onclick="showLocationInfo('Điện Biên Phủ')">Điện Biên Phủ</span> năm 1954.</p>
+</div>
+
+<script>
+    // --- SCRIPT DROPDOWN MENU ---
+    function toggleMenu() {
+        document.getElementById("eventMenu").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn') && !event.target.closest('.modal-content')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+        
+        // Đóng modal khi bấm ra ngoài
+        var modal = document.getElementById("locationModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // --- CƠ SỞ DỮ LIỆU ĐỊA DANH (Trích xuất mô phỏng từ Wikipedia) ---
+    const wikiData = {
+        "Đông Dương": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Indochine_fran%C3%A7aise_%281931%29.jpg/640px-Indochine_fran%C3%A7aise_%281931%29.jpg",
+            desc: "Liên bang Đông Dương (gồm Việt Nam, Lào, Campuchia) là thuộc địa quan trọng nhất của Pháp ở Viễn Đông. Giai đoạn 1945, thực dân Pháp quyết tâm tái chiếm khu vực này sau khi Nhật Bản đầu hàng Đồng Minh nhằm khôi phục vị thế cường quốc."
+        },
+        "Sài Gòn": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Saigon_after_1945_coup.jpg/640px-Saigon_after_1945_coup.jpg",
+            desc: "Sài Gòn năm 1945 là trung tâm kinh tế, chính trị lớn nhất miền Nam. Đêm 22 rạng sáng 23/9/1945, được sự giúp sức của quân Anh, thực dân Pháp đã nổ súng đánh chiếm trụ sở Ủy ban Nhân dân Nam Bộ tại Sài Gòn, mở đầu cuộc xâm lược Việt Nam lần thứ hai."
+        },
+        "Hà Nội": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Quyet_tu_quan_Ha_Noi_1946.jpg/640px-Quyet_tu_quan_Ha_Noi_1946.jpg",
+            desc: "Thủ đô Hà Nội cuối năm 1946 là nơi chứng kiến những trận đánh ác liệt nhất trong những ngày đầu Toàn quốc kháng chiến. Tiêu biểu là cuộc chiến đấu anh dũng 60 ngày đêm của Trung đoàn Thủ Đô nhằm kìm chân địch, bảo vệ Trung ương Đảng rút lên chiến khu."
+        },
+        "Việt Bắc": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/ATK_Dinh_Hoa.jpg/640px-ATK_Dinh_Hoa.jpg",
+            desc: "Căn cứ địa Việt Bắc (gồm các tỉnh Cao - Bắc - Lạng - Thái - Tuyên - Hà) được mệnh danh là 'Thủ đô gió ngàn'. Địa hình đồi núi hiểm trở nơi đây đã che chở cơ quan đầu não kháng chiến và chứng kiến sự thất bại thảm hại của quân Pháp trong chiến dịch Thu - Đông 1947."
+        },
+        "Cao Bằng": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cao_Bang_1950.jpg/640px-Cao_Bang_1950.jpg",
+            desc: "Cao Bằng là một mắt xích quan trọng trên tuyến phòng thủ biên giới Đường số 4 của Pháp. Trong Chiến dịch Biên giới Thu Đông 1950, quân Pháp tại đây đã bị cô lập hoàn toàn và buộc phải tháo chạy sau khi ta tiêu diệt cứ điểm Đông Khê."
+        },
+        "Đông Khê": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Tran_Dong_Khe_1950.jpg/640px-Tran_Dong_Khe_1950.jpg",
+            desc: "Cứ điểm Đông Khê là mục tiêu mở màn cho Chiến dịch Biên giới Thu Đông 1950. Việc ta tiêu diệt Đông Khê (18/9/1950) đã chặt đứt phòng tuyến Đường 4, đẩy quân Pháp vào thế bị động và dẫn đến sự sụp đổ của toàn bộ hệ thống phòng ngự Rơ-ve."
+        },
+        "Điện Biên Phủ": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Dien_Bien_Phu_1954.jpg/640px-Dien_Bien_Phu_1954.jpg",
+            desc: "Lòng chảo Điện Biên Phủ thuộc vùng núi Tây Bắc. Về sau, nơi đây trở thành Tập đoàn cứ điểm mạnh nhất Đông Dương của Pháp và là nơi diễn ra trận quyết chiến chiến lược chấn động địa cầu năm 1954, kết thúc hoàn toàn cuộc kháng chiến 9 năm."
+        },
+        "Sông Lô": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Song_Lo_historical.jpg/640px-Song_Lo_historical.jpg",
+            desc: "Sông Lô là tuyến đường thủy huyết mạch trong chiến dịch Việt Bắc 1947. Tại đây, pháo binh quân đội Việt Nam đã lập chiến công vang dội tại Đoan Hùng, Khe Lau, bắn cháy nhiều tàu chiến Pháp, bẻ gãy gọng kìm đường thủy của địch."
+        },
+        "Nam Định": {
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nam_Dinh_1946.jpg/640px-Nam_Dinh_1946.jpg",
+            desc: "Thành phố Nam Định là một trong những mặt trận quan trọng trong cuộc chiến đấu ở các đô thị (cuối 1946 - đầu 1947). Quân dân ta đã bao vây chặt quân Pháp trong xưởng sợi, giam chân địch trong nhiều ngày để nhân dân tản cư."
+        },
+        "Đèo Bông Lau": {
+            desc: "Đèo Bông Lau nằm trên Quốc lộ 4A thuộc tỉnh Lạng Sơn. Chiều 30/10/1947, quân ta đã phục kích và tiêu diệt một đoàn xe cơ giới quân sự lớn của Pháp tại đây, thu nhiều vũ khí và quân trang quân dụng, góp phần bẻ gãy gọng kìm phía Đông của địch."
+        }
+    };
+
+    // Hàm mặc định cho các địa danh không có trong danh sách chi tiết
+    const defaultData = {
+        desc: "Địa danh này giữ vai trò chiến lược trong các cuộc hành quân, giao tranh hoặc là điểm nút giao thông quan trọng của hai bên lực lượng trong thời kỳ Kháng chiến chống Pháp (1945 - 1950)."
+    };
+
+    // --- HÀM HIỂN THỊ MODAL ---
+    function showLocationInfo(locationName) {
+        var modal = document.getElementById("locationModal");
+        var title = document.getElementById("modal-title");
+        var img = document.getElementById("modal-img");
+        var desc = document.getElementById("modal-desc");
+
+        // Lấy dữ liệu hoặc dùng dữ liệu mặc định
+        var data = wikiData[locationName] || defaultData;
+
+        title.innerText = "📍 " + locationName + " (Giai đoạn 1945-1950)";
+        desc.innerText = data.desc;
+
+        // Xử lý hình ảnh
+        if (data.img) {
+            img.src = data.img;
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+
+        modal.style.display = "block";
+    }
+
+    // --- HÀM ĐÓNG MODAL ---
+    function closeModal() {
+        document.getElementById("locationModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
